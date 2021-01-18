@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from 'react-dom';
+import App from './App';
 
 // function Hello() {
 //   return (
@@ -39,26 +40,27 @@ import ReactDom from 'react-dom';
 
 
 
-const H1 = () => {
-  return ( <div>
-    <h1 id = "test"
-    name = "title"> Hello world, React.js!!!-Component!! </h1></div>
-  )
-}
+// const H1 = () => {
+//   return ( 
+//     <h1 id = "test"
+//     name = "title"> Hello world, React.js!!!-Component!! </h1>
+//   )
+// }
       
-      const Text = () => {
-        return ( <div>
-          <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p> <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p>
-          <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p> <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p>
+//       const Text = () => {
+//         return ( <>
+//           <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p> <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p>
+//           <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p> <p> Hello world, React.js!!!-Component!!!Hello world, React.js!!!-Component!!! </p>
         
-        </div>
-        )
-      }
-const App = () => {
-  return (<div>
-   <H1/>
-    <Text/>
-   </div>
- )
-}
+//         </>
+//         )
+//       }
+// const App = () => {
+//   return (<>
+//    <H1/>
+//     <Text/>
+//    </>
+//  )
+// }
 ReactDom.render( <App/> , document.getElementById("root"));
+
