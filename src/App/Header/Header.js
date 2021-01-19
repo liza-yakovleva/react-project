@@ -1,14 +1,11 @@
 import React from "react";
 
-
-import './reset.css'
-import './base.css'
 import './header.css'
 import './menu.css'
 import './cart.css'
 
 const Header = () => {
-  return ( < >
+  return (
    	<header class = "header">
    	  <div class = "container">
    	  <div class = "row">
@@ -25,9 +22,8 @@ const Header = () => {
    	  </ul> </div> </div> <div class = "col-lg-3">
    	  <div class = "cart text-center">
    	  <div class = "products-count" > 0 </div> <div class = "products-price" > $500 </div> </div> </div> </div> </div> </header>
-    </>
   )
 }
 
 export default Header
-
+ 
