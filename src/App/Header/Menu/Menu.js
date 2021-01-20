@@ -3,16 +3,16 @@ import React from "react";
 
 const Menu = () => {
   return (
-   	  	<div class="col-lg-6">
-					<div class="menu">
+   	  
+					<div className="menu">
 						<ul>
-							<li><a href="">Home</a></li>
-							<li><a href="">Products</a></li>
-							<li><a href="">Payment</a></li>
-							<li><a href="">Shipping</a></li>
+							<li><a href="/">Home</a></li>
+							<li><a href="/">Products</a></li>
+							<li><a href="/">Payment</a></li>
+							<li><a href="/">Shipping</a></li>
 						</ul>
 					</div>
-				</div>
+				
   )
 }
 
