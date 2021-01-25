@@ -1,10 +1,10 @@
 const products = [
   {
     name:"iPhone X",
-          description:"This is iPhone X",
-          type:"phone",
-          capacity:"64",
-            price:"500",
+    description:"This is iPhone X",
+    type:"phone",
+    capacity:"64",
+    price:"500",
   },
   {
     name:"iPhone XS",
