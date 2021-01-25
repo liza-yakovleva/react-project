@@ -1,48 +1,29 @@
 import React from "react";
 import ProductListItem from './ProductListItem';
+import products from './products';
+
+
 
 const ProductList = () => {
   return (
     <>
       <h2 className="page-title">Products List</h2>
       <div className="row">
-        <div className="col-lg-6">
-          <ProductListItem 
+        {products.map((product) => (
+          <div className="col-lg-6">
           
-          name="iPhone X"
-          description="This is iPhone 12"
-          type="phone"
-          capacity="64"
-            price="345"
+            <ProductListItem
+          
+              name={product.name}
+              description={product.description}
+              type={product.type}
+              capacity={product.capacity}
+              price={product.price}
             />
-        </div>
-        <div className="col-lg-6">
-          <ProductListItem 
-          name="iPhone 12"
-            description="This is iPhone 12"
-          type="phone"
-          capacity="64"
-            price="345"
-            />
-        </div>
-        <div className="col-lg-6">
-          <ProductListItem 
-          name="iPhone XS"
-            description="This is iPhone 12"
-          type="phone"
-          capacity="64"
-            price="345"
-            />
-        </div>
-        <div className="col-lg-6">
-          <ProductListItem 
-          name="iPhone 8 plus"
-            description="This is iPhone 12"
-          type="phone"
-          capacity="64"
-            price="345"
-            />
-      </div>
+          </div>
+        ))
+          }
+
       </div>
       </>
 					
