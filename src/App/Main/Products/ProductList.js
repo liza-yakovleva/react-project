@@ -11,6 +11,7 @@ const ProductList = () => {
       <div className="row">
         {products.map(( 
           {
+            id,
             name,
             description,
             type,
@@ -18,10 +19,9 @@ const ProductList = () => {
             price,
           }
         ) => (
-          <div className="col-lg-6">
+          <div className="col-lg-6"  key={id}>
           
             <ProductListItem
-          
               name={name}
               description={description}
               type={type}
@@ -38,5 +38,8 @@ const ProductList = () => {
 			
   )
 }
+
+
+
 
 export default ProductList
