@@ -9,12 +9,14 @@ const ProductList = () => {
     <>
       <h2 className="page-title">Products List</h2>
       <div className="row">
-        {products.map((
-          name,
-          description,
-          type,
-          capacity,
-          price,
+        {products.map(( 
+          {
+            name,
+            description,
+            type,
+            capacity,
+            price,
+          }
         ) => (
           <div className="col-lg-6">
           
