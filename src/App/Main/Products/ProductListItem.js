@@ -3,6 +3,29 @@ import "./ProductListItem.css";
 import PropTypes from 'prop-types'; 
 
 class ProductListItem extends Component {
+  state = {
+  productCount:1,
+}
+
+  onDecrementClick() {
+    this.setState((prevState) => (
+      {
+        productCount:prevState.productCount - 1
+      }
+    )
+    )
+  }
+  
+  onIncrementClick() {
+    this.setState((prevState) => (
+      {
+        productCount:prevState.productCount + 1
+      }
+    )
+    )
+  }
+
+
   render() {
     const {
       name,
@@ -12,26 +35,30 @@ class ProductListItem extends Component {
       price,
       image,
     } = this.props;
-    
+
 
      return (
    
     <div className="product-list-item">
       <div className="product-img">
-        <img src={this.props.image} alt={this.props.name}/>
+        <img src={image} alt={name}/>
       </div>
-      <div className="page-title">{this.props.name}</div>
-      <div className="product-description">{this.props.description}</div>
-      <div className="product-features">Type: {this.props.type}</div>
-      <div className="product-features">Capacity:{this.props.capacity}Gb</div>
+      <div className="page-title">{name}</div>
+      <div className="product-description">{description}</div>
+      <div className="product-features">Type: {type}</div>
+      <div className="product-features">Capacity:{capacity}Gb</div>
 
       <div className="product-quantity">
-        <button>-</button>
-        <input type="text" value="1" readOnly/>
-        <button>+</button>
+           <button
+            onClick= {()=> this.onDecrementClick() }
+           >-</button>
+        <input type="text" value={this.state.productCount} readOnly/>
+           <button 
+             onClick= {()=> this.onIncrementClick() }
+           >+</button>
       </div>
 
-      <div className="product-price">${this.props.price}</div>
+      <div className="product-price">${price}</div>
       <div className="btn-add-to-cart">Add to cart</div>
        
       </div>
@@ -42,44 +69,6 @@ class ProductListItem extends Component {
   )
   }
 }
-
-
-// const ProductListItem = ({
-//   name,
-//   description,
-//   type,
-//   capacity,
-//   price,
-//   image,
-// }) => {
-//   return (
-   
-//     <div className="product-list-item">
-//       <div className="product-img">
-//         <img src={this.props.image} alt={this.props.name}/>
-//       </div>
-//       <div className="page-title">{this.props.name}</div>
-//       <div className="product-description">{this.props.description}</div>
-//       <div className="product-features">Type: {this.props.type}</div>
-//       <div className="product-features">Capacity:{this.props.capacity}Gb</div>
-
-//       <div className="product-quantity">
-//         <button>-</button>
-//         <input type="text" value="1" readOnly/>
-//         <button>+</button>
-//       </div>
-
-//       <div className="product-price">${this.props.price}</div>
-//       <div className="btn-add-to-cart">Add to cart</div>
-       
-//       </div>
-      
-      
-					
-			
-//   )
-
-// }
 
 
 ProductListItem.propTypes = {
