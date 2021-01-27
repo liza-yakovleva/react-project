@@ -14,7 +14,7 @@ const ProductListItem = ({
    
     <div className="product-list-item">
       <div className="product-img">
-        <img src={image} alt="img"/>
+        <img src={image} alt={name}/>
       </div>
       <div className="page-title">{name}</div>
       <div className="product-description">{description}</div>
@@ -40,10 +40,11 @@ ProductListItem.propTypes = {
   type:PropTypes.string.isRequired,
   capacity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
- 
+ image: PropTypes.string,
       
 }
 ProductListItem.defaultProps = {
-  description:"No description...  "
+  description: "No description...  ",
+  image: "https://lh3.googleusercontent.com/proxy/U7BUKb6Y8H9WcBYhO4RT9Vc41-PaHHjipz1a386pN7Xw_os6QBbOYrznYhM9YpZtkWM0jTmz9pT-VM_XSKr38g",
 }
 export default ProductListItem 

@@ -53,4 +53,9 @@
     padding: 15px 0;
     text-align: center;
     background-color: rgb(255, 255, 255, 0.75);
+   
+}
+.product-img img {
+ max-width: 390px;
+    max-height: 102px;
 }

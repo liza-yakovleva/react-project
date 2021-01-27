@@ -33,7 +33,7 @@ const products = [
           type:"phone",
           capacity:64,
     price: 1000,
-               image:"images/ipad.png",
+              
   },
 ]
   export default products          
