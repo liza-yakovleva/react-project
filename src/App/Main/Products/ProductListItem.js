@@ -8,10 +8,14 @@ const ProductListItem = ({
   type,
   capacity,
   price,
+  image,
 }) => {
   return (
    
     <div className="product-list-item">
+      <div className="product-img">
+        <img src={image} alt="img"/>
+      </div>
       <div className="page-title">{name}</div>
       <div className="product-description">{description}</div>
       <div className="product-features">Type: {type}</div>

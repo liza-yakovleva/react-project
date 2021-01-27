@@ -5,7 +5,8 @@ const products = [
     description:"This is iPhone X",
     type:"phone",
     capacity:64,
-    price:500,
+    price: 500,
+    image:"images/iphone.png",
   },
   {
     id:2,
@@ -13,7 +14,8 @@ const products = [
           // description:"This is iPhone XS",
           type:"phone",
           capacity:256,
-            price:1500,
+    price: 1500,
+            image:"images/ipad.png",
   },
   {
     id:3,
@@ -21,7 +23,8 @@ const products = [
           description:"This is iPhone 12",
           type:"phone",
           capacity:64,
-            price:2000,
+    price: 2000,
+               image:"images/iphone.png",
   },
   {
     id:4,
@@ -29,7 +32,8 @@ const products = [
           description:"This is iPhone 8",
           type:"phone",
           capacity:64,
-            price:1000,
+    price: 1000,
+               image:"images/ipad.png",
   },
 ]
   export default products          
