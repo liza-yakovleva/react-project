@@ -2,29 +2,31 @@ import React, { Component } from "react";
 import "./ProductListItem.css";
 import PropTypes from 'prop-types'; 
 
+
+
+
 class ProductListItem extends Component {
+
+//   constructor() {
+//   super();
+//   this.onIncrementClick = this.onIncrementClick.bind(this)
+// }
+
   state = {
-  productCount:1,
+    productCount: 1,
 }
 
-  onDecrementClick() {
-    this.setState((prevState) => (
-      {
-        productCount:prevState.productCount - 1
-      }
-    )
-    )
-  }
-  
   onIncrementClick() {
-    this.setState((prevState) => (
-      {
-        productCount:prevState.productCount + 1
-      }
-    )
-    )
+    this.setState(prevState => ({
+      productCount:prevState.productCount + 1,
+    }))
   }
 
+   onDecrementClick = () => {
+    this.setState(prevState => ({
+      productCount:prevState.productCount - 1,
+    }))
+  }
 
   render() {
     const {
@@ -50,11 +52,11 @@ class ProductListItem extends Component {
 
       <div className="product-quantity">
            <button
-            onClick= {()=> this.onDecrementClick() }
+          onClick={() => this.onDecrementClick()}
            >-</button>
         <input type="text" value={this.state.productCount} readOnly/>
            <button 
-             onClick= {()=> this.onIncrementClick() }
+             onClick={() => this.onIncrementClick()}
            >+</button>
       </div>
 
