@@ -25,6 +25,7 @@ class ProductListItem extends Component {
     }))
   }
 
+  
 
   
   
