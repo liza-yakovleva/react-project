@@ -7,14 +7,10 @@ import PropTypes from 'prop-types';
 
 class ProductListItem extends Component {
 
-//   constructor() {
-//   super();
-//   this.onIncrementClick = this.onIncrementClick.bind(this)
-// }
 
   state = {
     productCount: 1,
-    color:"green",
+   
 }
 
   onIncrementClick() {
@@ -30,28 +26,9 @@ class ProductListItem extends Component {
   }
 
 
-  //  changeColor = () => {
-  //    this.setState(prevState => (
-  //     prevState.color === "green" ? {color:"red"} :  {color:"green"}
-  //   ))
-  //  }
   
-  changeColor = () => {
-    this.setState(prevState => {
-      if (prevState.color === "green") {
-        return {
-          color: "red"
-        }
-      
-      }
-      else {
-        return {
-          color: "green"
-        }
-        
-      }
-    })
-  }
+  
+  
   render() {
     const {
       name,
@@ -71,8 +48,6 @@ class ProductListItem extends Component {
       </div>
       <div className="page-title">{name}</div>
          <div className="product-description">{description}</div>
-         <p>Color:{this.state.color}</p>
-         <button onClick={() => this.changeColor()}>Change color</button>
       <div className="product-features">Type: {type}</div>
       <div className="product-features">Capacity:{capacity}Gb</div>
 
