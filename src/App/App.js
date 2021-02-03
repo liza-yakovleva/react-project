@@ -11,28 +11,21 @@ import '../common/style/base.css'
 
 class App extends Component   {
   state = {
-    cardData: {
-      count: 0,
-      price:0,
+    cartData: {
+      count: 100,
+      price: 10,
     }
   }
   render() {
     return (< >
-      <Header />
+      <Header cartData={this.state.cartData} />
       <Main />
       <Footer />
     </>
     )
   }
 }
-// const App = () => {
-//   return ( < >
-//     <Header/>
-//     <Main/>
-//     <Footer/>
-//     </>
-//   )
-// }
+
 
 export default App
 
