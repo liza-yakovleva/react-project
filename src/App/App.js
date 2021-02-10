@@ -7,20 +7,20 @@ import '../common/style/base.css'
 class App extends Component {
   state = {
     productsInCart: {
-      id: 0,
-      count: 0,
+      1:3,
+      2:4,
     }
   }
 
   AddProductToCard = (count, id) => {
 this.setState((prevState) => ({
-  productsInCart: {
-    id: prevState.productsInCart.id === id ? prevState.productsInCart.id : id,
-    count:
-      this.state.productsInCart.id === id
-        ? prevState.productsInCart.count + count
-        : count,
-  },
+  // productsInCart: {
+  //   id: prevState.productsInCart.id === id ? prevState.productsInCart.id : id,
+  //   count:
+  //     this.state.productsInCart.id === id
+  //       ? prevState.productsInCart.count + count
+  //       : count,
+  // },
 }));
   }
   render() {
