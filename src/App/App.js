@@ -12,23 +12,24 @@ class App extends Component {
     }
   }
 
-  AddProductToCard = (count, id) => {
+  AddProductToCard = (id, count) => {
 this.setState((prevState) => ({
-  // productsInCart: {
-  //   id: prevState.productsInCart.id === id ? prevState.productsInCart.id : id,
-  //   count:
-  //     this.state.productsInCart.id === id
-  //       ? prevState.productsInCart.count + count
-  //       : count,
-  // },
+   
+  productsInCart: {
+      ...prevState.productsInCart,
+      [id]: (prevState.productsInCart[id] || 0) + count,
+    }
+  
 }));
   }
+  
   render() {
     return (
       <>
         <Header 
          productsInCart={this.state.productsInCart}
-         />
+        />
+       
         <Main AddProductToCard={this.AddProductToCard} />
         <Footer />
       </>
