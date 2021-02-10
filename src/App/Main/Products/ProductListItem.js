@@ -1,31 +1,22 @@
 import React, { Component } from "react";
 import "./ProductListItem.css";
 import PropTypes from 'prop-types'; 
-
-
-
 class ProductListItem extends Component {
   state = {
     productCount: 1,
-  };
-
-  clickAdd = () => {
-    this.props.AddToCard(this.state.productCount, this.price);
   };
   onIncrementClick = () => {
     this.setState((prevState) => ({
       productCount: prevState.productCount + 1,
     }));
   };
-
   onDecrementClick = () => {
     this.setState((prevState) => ({
       productCount: prevState.productCount - 1,
     }));
   };
-
   render() {
-    const { name, description, type, capacity, price, image } = this.props;
+    const {id, name, description, type, capacity, price, image, AddProductToCard } = this.props;
     return (
       <div className="product-list-item">
         <div className="product-img">
@@ -53,12 +44,11 @@ class ProductListItem extends Component {
         </div>
 
         <div className="product-price">${price}</div>
-        <div className="product-price">All:${price*this.state.productCount}</div>
+        <div className="product-price">
+          All:${price * this.state.productCount}
+        </div>
         <div
-          // =========
-
-          onClick={this.clickAdd}
-          //  ========
+          onClick={() => AddProductToCard(this.state.productCount, id)}
           className="btn-add-to-cart"
         >
           Add to cart
@@ -67,19 +57,16 @@ class ProductListItem extends Component {
     );
   }
 }
-
-
 ProductListItem.propTypes = {
   name:PropTypes.string.isRequired,
   description:PropTypes.string,
   type:PropTypes.string.isRequired,
   capacity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
- image: PropTypes.string,
-      
+ image: PropTypes.string,    
 }
 ProductListItem.defaultProps = {
   description: "No description...  ",
   image: "https://lh3.googleusercontent.com/proxy/U7BUKb6Y8H9WcBYhO4RT9Vc41-PaHHjipz1a386pN7Xw_os6QBbOYrznYhM9YpZtkWM0jTmz9pT-VM_XSKr38g",
 }
-export default ProductListItem 
+export default ProductListItem

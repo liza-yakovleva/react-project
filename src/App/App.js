@@ -2,43 +2,37 @@ import React, {Component} from "react";
 import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
-// import {price} from './Products/ProductListItem'
 import '../common/style/reset.css'
 import '../common/style/base.css'
-
-
-
-
 class App extends Component {
   state = {
-    cartData: {
-      count: 100,
-      price: 1000,
-    },
-  };
+    productsInCart: {
+      id: 0,
+      count: 0,
+    }
+  }
 
-  AddToCard = (props) => {
-    this.setState((prevState) => ({
-      cartData: {
-      // count: 1000,
-      // price: 10000,
-      count: prevState.count + this.props.productCount,
-      price: prevState.price + this.props.productCount * this.props.price,
-      },
-    }));
-  };
-
+  AddProductToCard = (count, id) => {
+this.setState((prevState) => ({
+  productsInCart: {
+    id: prevState.productsInCart.id === id ? prevState.productsInCart.id : id,
+    count:
+      this.state.productsInCart.id === id
+        ? prevState.productsInCart.count + count
+        : count,
+  },
+}));
+  }
   render() {
     return (
       <>
-        <Header cartData={this.state.cartData} />
-        <Main AddToCard={this.AddToCard} />
+        <Header 
+         productsInCart={this.state.productsInCart}
+         />
+        <Main AddProductToCard={this.AddProductToCard} />
         <Footer />
       </>
-    );
+    )
   }
 }
-
-
 export default App
-
